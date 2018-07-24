@@ -6,13 +6,13 @@ import java.util.Scanner;
 public class NumberBaseballGame {
 
 	public static void main(String[] args) {
-       NumberBaseballGame nbs = new NumberBaseballGame();
-       int[] answer = nbs.makeAnswer();
-       while(true) {
-    	   int[] strikeBall = nbs.doGame(answer);
-	       System.out.println(nbs.showResult(strikeBall[0], strikeBall[1]));
-	       if(strikeBall[0]==3) break;
-       }
+        	NumberBaseballGame nbs = new NumberBaseballGame();
+        	int[] answer = nbs.makeAnswer();
+       		while(true) {
+    	   		int[] strikeBall = nbs.doGame(answer);
+	       		System.out.println(nbs.showResult(strikeBall[0], strikeBall[1]));
+	       	if(strikeBall[0]==3) break;
+       		}
 	}
 
 	public int[] makeAnswer() {
@@ -36,15 +36,15 @@ public class NumberBaseballGame {
 	}
 	
 	public int[] getUserGuess() {
-		System.out.print("¼ıÀÚ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä ex)123 : ");
+		System.out.print("ìˆ«ìë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš” ex)123 : ");
 		int[] guess = new int[3];
-        Scanner sc = new Scanner(System.in);
-        int guessInput = sc.nextInt();
-        for(int i=0; i<guess.length; i++) {
-        	guess[guess.length-i-1] = guessInput%10;
-        	guessInput = guessInput/10;
-        }
-        return guess;
+        	Scanner sc = new Scanner(System.in);
+        	int guessInput = sc.nextInt();
+        	for(int i=0; i<guess.length; i++) {
+        		guess[guess.length-i-1] = guessInput%10;
+        		guessInput = guessInput/10;
+        	}
+        	return guess;
 	}
 	
 	public boolean isStrike(int guess, int answer){
@@ -60,11 +60,11 @@ public class NumberBaseballGame {
 	}
 	
 	public String showResult(int strike, int ball) {
-		if(strike==3) return "3°³ÀÇ ¼ıÀÚ¸¦ ¸ğµÎ ¸ÂÈ÷¼Ì½À´Ï´Ù! °ÔÀÓ Á¾·á";
-		else if(strike==0 && ball==0) return "³´½Ì";
-		else if(ball==0) return strike + "½ºÆ®¶óÀÌÅ©";
-		else if(strike==0) return ball + "º¼";
-		else return strike + "½ºÆ®¶óÀÌÅ© " + ball + "º¼";
+		if(strike==3) return "3ê°œì˜ ìˆ«ìë¥¼ ëª¨ë‘ ë§íˆì…¨ìŠµë‹ˆë‹¤! ê²Œì„ ì¢…ë£Œ";
+		else if(strike==0 && ball==0) return "ë‚«ì‹±";
+		else if(ball==0) return strike + "ìŠ¤íŠ¸ë¼ì´í¬";
+		else if(strike==0) return ball + "ë³¼";
+		else return strike + "ìŠ¤íŠ¸ë¼ì´í¬ " + ball + "ë³¼";
 	}
 	
 	public int[] doGame(int[] answer) {
