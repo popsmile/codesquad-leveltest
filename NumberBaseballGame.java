@@ -11,7 +11,7 @@ public class NumberBaseballGame {
        		while(true) {
     	   		int[] strikeBall = nbs.doGame(answer);
 	       		System.out.println(nbs.showResult(strikeBall[0], strikeBall[1]));
-	       	if(strikeBall[0]==3) break;
+	       		if(strikeBall[0]==3) break;
        		}
 	}
 
