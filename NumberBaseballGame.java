@@ -1,5 +1,3 @@
-package level2;
-
 import java.util.Random;
 import java.util.Scanner;
 
@@ -18,8 +16,9 @@ public class NumberBaseballGame {
 	public int[] makeAnswer() {
 		Random random = new Random();
 		int[] answer = new int[3];
+		int[] number = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 		for(int i=0; i<answer.length; i++) {
-			answer[i] = random.nextInt(9) + 1;
+			answer[i] = number[random.nextInt(8)];
 			i = removeSameValuePosition(i, answer);
 		}
 		return answer;
@@ -36,7 +35,7 @@ public class NumberBaseballGame {
 	}
 	
 	public int[] getUserGuess() {
-		System.out.print("ìˆ«ìë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš” ex)123 : ");
+		System.out.print("¼ıÀÚ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä ex)123 : ");
 		int[] guess = new int[3];
         	Scanner sc = new Scanner(System.in);
         	int guessInput = sc.nextInt();
@@ -60,11 +59,11 @@ public class NumberBaseballGame {
 	}
 	
 	public String showResult(int strike, int ball) {
-		if(strike==3) return "3ê°œì˜ ìˆ«ìë¥¼ ëª¨ë‘ ë§íˆì…¨ìŠµë‹ˆë‹¤! ê²Œì„ ì¢…ë£Œ";
-		else if(strike==0 && ball==0) return "ë‚«ì‹±";
-		else if(ball==0) return strike + "ìŠ¤íŠ¸ë¼ì´í¬";
-		else if(strike==0) return ball + "ë³¼";
-		else return strike + "ìŠ¤íŠ¸ë¼ì´í¬ " + ball + "ë³¼";
+		if(strike==3) return "3°³ÀÇ ¼ıÀÚ¸¦ ¸ğµÎ ¸ÂÈ÷¼Ì½À´Ï´Ù! °ÔÀÓ Á¾·á";
+		else if(strike==0 && ball==0) return "³´½Ì";
+		else if(ball==0) return strike + "½ºÆ®¶óÀÌÅ©";
+		else if(strike==0) return ball + "º¼";
+		else return strike + "½ºÆ®¶óÀÌÅ© " + ball + "º¼";
 	}
 	
 	public int[] doGame(int[] answer) {
