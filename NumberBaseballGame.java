@@ -9,13 +9,13 @@ public class NumberBaseballGame {
        		while(true) {
     	   		int[] strikeBall = nbs.doGame(answer);
 	       		System.out.println(nbs.showResult(strikeBall[0], strikeBall[1]));
-	       		if(strikeBall[0]==3) break;
+	       		if(strikeBall[0]==4) break;
        		}
 	}
 
 	public int[] makeAnswer() {
 		Random random = new Random();
-		int[] answer = new int[3];
+		int[] answer = new int[4];
 		int[] number = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 		for(int i=0; i<answer.length; i++) {
 			answer[i] = number[random.nextInt(8)];
@@ -35,8 +35,8 @@ public class NumberBaseballGame {
 	}
 	
 	public int[] getUserGuess() {
-		System.out.print("숫자를 입력해주세요 ex)123 : ");
-		int[] guess = new int[3];
+		System.out.print("숫자를 입력해주세요 ex)1234 : ");
+		int[] guess = new int[4];
         	Scanner sc = new Scanner(System.in);
         	int guessInput = sc.nextInt();
         	for(int i=0; i<guess.length; i++) {
@@ -59,7 +59,7 @@ public class NumberBaseballGame {
 	}
 	
 	public String showResult(int strike, int ball) {
-		if(strike==3) return "3개의 숫자를 모두 맞히셨습니다! 게임 종료";
+		if(strike==4) return "4개의 숫자를 모두 맞히셨습니다! 게임 종료";
 		else if(strike==0 && ball==0) return "낫싱";
 		else if(ball==0) return strike + "스트라이크";
 		else if(strike==0) return ball + "볼";
